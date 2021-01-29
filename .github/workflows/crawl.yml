@@ -23,5 +23,7 @@ jobs:
       env:
         BOT_ID: ${{ secrets.BOT_ID }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
+        GIST_ID: ${{ secrets.GIST_ID }}
+        GIST_TOKEN: ${{ secrets.GIST_TOKEN }}
       run: |
                 python app.py

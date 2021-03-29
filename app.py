@@ -12,10 +12,10 @@ recents = requests.get(gist_url).json()['files']['recents']['content'].split('\n
 url_base = 'http://www.ppomppu.co.kr/zboard/'
 list_url = 'zboard.php?id=ppomppu&page_num=20&search_type=sub_memo&keyword='
 noti_url = f'https://api.telegram.org/bot{bot_id}/sendMessage'
-notis = []
 while len(items) > len(recents):
     recents.append('')
 for idx, item in enumerate(items):
+    notis = []
     target_url = url_base + list_url + parse.quote(item)
     response = requests.get(target_url).text
     links = re.findall(r"(?<=<a href=\")view.php\?id=ppomppu&.*?(?=\")", response)

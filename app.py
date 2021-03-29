@@ -42,7 +42,7 @@ gist_headers = {
     'Authorization':f'token {os.getenv("GIST_TOKEN")}'
 }
 gist_data = {
-    'description':'update recent link',
+    'description':'update recent links',
     'files':{
         'recents': {
             'content': '\n'.join(recents)

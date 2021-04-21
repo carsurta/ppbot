@@ -4,7 +4,7 @@ import json
 from urllib import parse
 import requests
 
-items = ['문화상품권', '공유기']
+items = ['문화상품권', '공유기', '필립스 칫솔모', '제로콜라', '코크제로', '질레트 면도날']
 bot_id = os.getenv('BOT_ID')
 chat_id = os.getenv('CHAT_ID')
 gist_url = f'https://api.github.com/gists/{os.getenv("GIST_ID")}'

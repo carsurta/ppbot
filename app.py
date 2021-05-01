@@ -25,7 +25,7 @@ for idx, item in enumerate(items):
             if rs:
                 notis = reversed([url_base + links[i] for i in range(rs)])
         except:
-            notis = [url_base + links[0]])
+            notis = [url_base + links[0]]
     else:
         notis = [f'{item} 게시글 링크 파싱 오류 발생']
     if notis:

@@ -4,7 +4,7 @@ import json
 from urllib import parse
 import requests
 
-items = ['문화상품권', '공유기', '필립스 칫솔모', '제로콜라', '코크제로', '질레트 면도날']
+items = ['문화상품권', '공유기', '필립스 칫솔모', '질레트 면도날', '제로 칠성', '선크림']
 bot_id = os.getenv('BOT_ID')
 chat_id = os.getenv('CHAT_ID')
 gist_url = f'https://api.github.com/gists/{os.getenv("GIST_ID")}'
@@ -25,7 +25,7 @@ for idx, item in enumerate(items):
             if rs:
                 notis += reversed([url_base + links[i] for i in range(rs)])
         except:
-            notis += reversed([url_base + l for l in links])
+            notis += [url_base + links[0]])
     else:
         notis += [f'{item} 게시글 링크 파싱 오류 발생']
     if notis:

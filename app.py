@@ -15,7 +15,6 @@ noti_url = f'https://api.telegram.org/bot{bot_id}/sendMessage'
 while len(items) > len(recents):
     recents.append('')
 for idx, item in enumerate(items):
-    notis = []
     target_url = url_base + list_url + parse.quote(item)
     response = requests.get(target_url).text
     links = re.findall(r"(?<=<a href=\")view.php\?id=ppomppu&.*?(?=\")", response)
@@ -23,11 +22,11 @@ for idx, item in enumerate(items):
         try:
             rs = links.index(recents[idx])
             if rs:
-                notis += reversed([url_base + links[i] for i in range(rs)])
+                notis = reversed([url_base + links[i] for i in range(rs)])
         except:
-            notis += [url_base + links[0]])
+            notis = [url_base + links[0]])
     else:
-        notis += [f'{item} 게시글 링크 파싱 오류 발생']
+        notis = [f'{item} 게시글 링크 파싱 오류 발생']
     if notis:
         if links:
             recents[idx] = links[0]
